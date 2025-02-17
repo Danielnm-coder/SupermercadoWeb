@@ -1,59 +1,52 @@
 # SupermercadoWeb
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+**SupermercadoWeb** é a aplicação frontend desenvolvida para interação com a API **SupermercadoApp**. O projeto permite a gestão de produtos de um supermercado, oferecendo uma interface intuitiva para cadastro, consulta, edição e exclusão de produtos.
 
-## Development server
+A API utilizada neste projeto está disponível em: [SupermercadoApp](https://github.com/Danielnm-coder/SupermercadoApp).
 
-To start a local development server, run:
+## Tecnologias Utilizadas
 
-```bash
-ng serve
-```
+O projeto utiliza as seguintes tecnologias e bibliotecas:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Angular**: Framework principal para desenvolvimento da interface web. Saiba mais em [Angular](https://angular.io/).
+- **TypeScript**: Linguagem utilizada para desenvolvimento do frontend. Saiba mais em [TypeScript](https://www.typescriptlang.org/).
+- **Bootstrap**: Biblioteca de estilização para tornar a interface responsiva e agradável. Saiba mais em [Bootstrap](https://getbootstrap.com/).
+- **HttpClient**: Serviço do Angular utilizado para realizar as requisições à API. Saiba mais em [HttpClient Angular](https://angular.io/guide/http).
 
-## Code scaffolding
+## Funcionalidades
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Tela de cadastro de produtos.
+- Tela de consulta de produtos.
+- Edição e exclusão de produtos diretamente pelos botões na DataTable de consulta.
+- Navbar com links para as telas de consulta e cadastro de produtos.
+- Integração com a API **SupermercadoApp** para manipulação dos dados.
 
-```bash
-ng generate component component-name
-```
+## Estrutura do Projeto
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **src/app/components**: Contém os componentes reutilizáveis da aplicação.
+- **src/app/pages**: Contém as telas principais da aplicação.
+- **src/app/layout**: Contém o layout principal da aplicação, incluindo o Navbar.
+- **src/app/config**: Contém arquivos de configuração da aplicação.
 
-```bash
-ng generate --help
-```
+## Como Executar o Projeto
 
-## Building
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seuusuario/SupermercadoWeb.git
+   ```
+2. Acesse a pasta do projeto:
+   ```sh
+   cd SupermercadoWeb
+   ```
+3. Instale as dependências:
+   ```sh
+   npm install
+   ```
+4. Inicie a aplicação:
+   ```sh
+   ng serve
+   ```
+5. Acesse o frontend em `http://localhost:4200`.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Autor
+Desenvolvido por Daniel Nascimento.

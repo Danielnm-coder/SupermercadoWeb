@@ -1,0 +1,71 @@
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">
+                        Edição de Produtos</h2>
+                    <p class="card-subtitle text-muted">
+
+                        Preencha o formulário para editar um  produtos.</p>
+
+                    <hr>
+
+                    <div *ngIf="mensagemErro" class="alert alert-danger mb-2 alert-dismissible">
+                        <strong>Não e possivel alterar umm produto  com mesmo nome.</strong> {{mensagem}}
+                        <button (click)="mensagemErro = ''" type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+
+                    <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+                        <div class="mb-3">
+                            <label>Nome do produto:</label>
+                            <input type="text" class="form-control" formControlName="nome" />
+                            <div class="text-danger" *ngIf="form.get('nome')?.touched && form.get('nome')?.invalid">
+                                Por favor, informe o nome do produto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Preço:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R$</span>
+                                </div>
+                                <input type="number" class="form-control" formControlName="preco" min="0" step="0.01" />
+                            </div>
+                            <div class="text-danger" *ngIf="form.get('preco')?.touched && form.get('preco')?.invalid">
+                                Por favor, informe o preço do produto
+                                com valor mínimo de 0.01.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Quantidade em Estoque:</label>
+                            <input type="number" class="form-control" formControlName="quantidadeEmEstoque" min="0" />
+                            <div class="text-danger"
+                                *ngIf="form.get('quantidadeEmEstoque')?.touched && form.get('quantidadeEmEstoque')?.invalid">
+                                Por favor, informe a quantidadedo produto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Selecione a categoria:</label>
+                            <select class="form-select" formControlName="categoriaId">
+                                <option value="">Escolha uma opção</option>
+                                <option *ngFor="let c of categorias" value="{{c.id}}">
+                                    {{c.nome | uppercase}}
+                                </option>
+                            </select>
+                            <div class="text-danger"
+                                *ngIf="form.get('categoriaId')?.touched && form.get('categoriaId')?.invalid">
+                                Por favor, selecione a categoria do produto.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-success" [disabled]="form.invalid"
+                                value="Realizar Cadastro" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

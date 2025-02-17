@@ -1,0 +1,71 @@
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">
+
+                        Consulta de Produtos
+                    </h2>
+
+                    <p class="card-subtitle text-muted">
+
+                        Confira a listagem de produtos cadastrados no sistema.
+                    </p>
+                    <hr>
+
+                    <div *ngIf="mensagem" class="alert alert-success mb-2 alert-dismissible">
+                        <strong>Sucesso!</strong> {{ mensagem }}
+                        <button (click)="mensagem = ''" type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+
+                    <div *ngIf="mensagemErro" class="alert alert-danger mb-2 alert-dismissible">
+                        <strong> Não e possivel excluir um produto com o estoque maior que 0</strong>
+                        <button (click)="mensagemErro = ''" type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+
+
+                    <div class="table-responsive">
+                        <table class="table table-borderedtable-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Nome do produto </th>
+                                    <th>Preço</th>
+                                    <th>Estoque</th>
+                                    <th>Valor total em estoque  </th>
+                                    <th>Operações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of produtos">
+                                    <td> {{ p.nome | uppercase }} </td>
+                                    <td> {{ p.preco | currency : 'BRL' }} </td>
+                                    <td> {{ p.quantidadeEmEstoque }} </td>
+                                    <td> {{ p.total | currency : 'BRL'}} </td>
+                                    <td>
+                                        <button [routerLink]="['/pages/edicao-produtos', p.id]"  class="btn btn-outline-primary btn-sm me-1">
+                                            Editar
+                                        </button>
+                                        <button (click)="onDelete(p.id)" class="btn btn-outline-danger btn-sm">
+                                            Excluir
+                                        </button>
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        Número de produtos  resgistrados:
+                                        {{ produtos.length }}
+
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
