@@ -17,7 +17,7 @@ O projeto utiliza as seguintes tecnologias e bibliotecas:
 
 - Tela de cadastro de produtos.
 - Tela de consulta de produtos.
-- Edição e exclusão de produtos diretamente pelos botões na DataTable de consulta.
+- Edição e exclusão de produtos diretamente pelos botões na tabela de consulta.
 - Navbar com links para as telas de consulta e cadastro de produtos.
 - Integração com a API **SupermercadoApp** para manipulação dos dados.
 
